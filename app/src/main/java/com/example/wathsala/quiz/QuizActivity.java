@@ -17,6 +17,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mButtonChoice1;
     private Button mButtonChoice2;
     private Button mButtonChoice3;
+    private Button exitbtn;
 
 
     private String mAnswer;
@@ -33,6 +34,7 @@ public class QuizActivity extends AppCompatActivity {
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
         mButtonChoice2 = (Button)findViewById(R.id.choice2);
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
+        exitbtn =(Button)findViewById(R.id.quit);
         updateQuestion();
 
         mButtonChoice1.setOnClickListener(new View.OnClickListener(){
@@ -79,6 +81,18 @@ public class QuizActivity extends AppCompatActivity {
                 }
             }
         });
+
+        exitbtn=(Button)findViewById(R.id.quit);
+
+        exitbtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
+
+            }
+        });
     }
 
     private void updateQuestion(){
@@ -91,12 +105,16 @@ public class QuizActivity extends AppCompatActivity {
 
             mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
             mQuestionNumber++;
+        if(mQuestionNumber==4){
+            Intent intent = new Intent(QuizActivity.this, HighScoreActivity.class);
+            intent.putExtra("score", mScore);
+            startActivity(intent);
 
+        }
     }
 
     private void updateScore (int point){
         mScoreView.setText("" +mScore);
     }
-
 
 }
