@@ -56,6 +56,4 @@ public class QuestionLibrary {
         String answer = mCorrectAnswers[a];
         return answer;
     }
-
-
 }
