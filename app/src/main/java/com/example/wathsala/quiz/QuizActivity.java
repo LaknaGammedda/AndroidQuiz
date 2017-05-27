@@ -18,6 +18,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mButtonChoice2;
     private Button mButtonChoice3;
 
+
     private String mAnswer;
     private int mScore = 0;
     private int mQuestionNumber = 0;
@@ -32,16 +33,70 @@ public class QuizActivity extends AppCompatActivity {
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
         mButtonChoice2 = (Button)findViewById(R.id.choice2);
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
+        updateQuestion();
+
+        mButtonChoice1.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                if(mButtonChoice1.getText()==mAnswer){
+                    mScore = mScore +1;
+                    updateScore(mScore);
+                    updateQuestion();
+
+                    Toast.makeText(QuizActivity.this, "corret", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
+                    updateQuestion();
+                }
+            }
+        });
+
+        mButtonChoice2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                if(mButtonChoice2.getText()==mAnswer){
+                    mScore = mScore +1;
+                    updateScore(mScore);
+                    updateQuestion();
+
+                    Toast.makeText(QuizActivity.this, "corret", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
+                    updateQuestion();
+                }
+            }
+        });
+
+        mButtonChoice3.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                if(mButtonChoice3.getText()==mAnswer){
+                    mScore = mScore +1;
+                    updateScore(mScore);
+                    updateQuestion();
+
+                    Toast.makeText(QuizActivity.this, "corret", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
+                    updateQuestion();
+                }
+            }
+        });
+    }
+
+    private void updateQuestion(){
+
+            mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+            mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
+            mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
+            mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
+
+
+            mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
+            mQuestionNumber++;
 
     }
 
-
-    public void onClick(View view){
-        Button answer = (Button) view;
-        if (answer.getText() == mAnswer){
-            mScore = mScore +1;
-            Toast.makeText(QuizActivity.this,"correct",Toast.LENGTH_SHORT).show();
-        }else Toast.makeText(QuizActivity.this,"wrong",Toast.LENGTH_SHORT).show();
-
+    private void updateScore (int point){
+        mScoreView.setText("" +mScore);
     }
+
+
 }

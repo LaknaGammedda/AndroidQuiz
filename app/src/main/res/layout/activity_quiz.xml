@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="onClick"
     android:orientation="vertical"
     tools:context="com.example.wathsala.quiz.QuizActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="40dp"
+        android:padding="8dp">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Score"
-            android:textSize="20sp"
             android:layout_alignParentLeft="true"
-            android:id="@+id/textView"
-            />
+            android:text="Score"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/score"
@@ -29,9 +29,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:textSize="20sp"
             android:inputType="textPersonName"
-            android:text="0" />
+            android:text="0"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -50,47 +50,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:background="#0091EA"
-        android:padding="8dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:background="#0091EA"
+        android:onClick="onClick"
+        android:padding="8dp"
         android:text="bird"
         android:textColor="#fff" />
 
     <Button
+        android:id="@+id/choice2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#0091EA"
+        android:onClick="onClick"
+        android:padding="8dp"
         android:text="door"
-        android:background="#0091EA"
-        android:textColor="#fff"
-        android:padding="8dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="24dp"
-        android:id="@+id/choice2"/>
+        android:textColor="#fff" />
 
     <Button
+        android:id="@+id/choice3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#0091EA"
+        android:onClick="onClick"
+        android:padding="8dp"
         android:text="rock"
-        android:background="#0091EA"
-        android:textColor="#fff"
-        android:padding="8dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="24dp"
-        android:id="@+id/choice3"/>
+        android:textColor="#fff" />
 
     <Button
+        android:id="@+id/quit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="quit"
-        android:background="#B71C1C"
-        android:textColor="#fff"
-        android:padding="8dp"
+        android:layout_marginBottom="24dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="24dp"
-        android:id="@+id/quit"/>
+        android:background="#B71C1C"
+        android:padding="8dp"
+        android:text="quit"
+        android:textColor="#fff" />
 
 </LinearLayout>
