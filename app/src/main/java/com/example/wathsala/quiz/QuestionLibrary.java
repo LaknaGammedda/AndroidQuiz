@@ -5,7 +5,6 @@ package com.example.wathsala.quiz;
  * IT 15 2864 06 - W.V.Dilushika
  * IT 15 2855 84 - D.C.Gunasekara
  * IT 15 2868 88 - W.C.I.D.Silva
- *
  */
 public class QuestionLibrary {
 
@@ -13,9 +12,8 @@ public class QuestionLibrary {
             "Which the following is not  part of the three-sphere model for system management",
             "which process group normally requires  the most resources and time",
             "Which of following items is not normaly included in the project chater",
-            "A ______ is a temporary endeavor undertaken to create a unique product service of result "
-
-
+            "A ______ is a temporary endeavor undertaken to create a unique product service of result ",
+            "______ is the leading agile development method."
     };
 
 
@@ -23,11 +21,12 @@ public class QuestionLibrary {
             {"Techology", "Information", "Business"},
             {"Initiating", "Planning", "Executing"},
             {"Guntt chart", "Stakeholder signature", "Budget information"},
-            {"Program", "Process", "Project"}
+            {"Program", "Process", "Project"},
+            {"Extreme programming","Six Sigma","Scrum"}
     };
 
 
-    private String mCorrectAnswers[] = {"Information","Executing","Guntt chart", "Project"};
+    private String mCorrectAnswers[] = {"Information","Executing","Guntt chart", "Project","Scrum"};
 
 
     public String getQuestion(int a) {
@@ -60,5 +59,5 @@ public class QuestionLibrary {
         return answer;
     }
 
-
+    public int getLength(){return mQuestions.length;}
 }

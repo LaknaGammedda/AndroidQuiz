@@ -21,9 +21,9 @@ public class HighScoreActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int score = intent.getIntExtra("score",0);
 
-        txtScore.setText("Your score: 4/" +score);
+        txtScore.setText("Your score: 5/" +score);
 
-        if(score<2){
+        if(score<3){
             image.setBackgroundResource(R.drawable.sad);
         }
         else

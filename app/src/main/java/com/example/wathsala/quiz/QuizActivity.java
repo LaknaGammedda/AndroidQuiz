@@ -96,7 +96,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void updateQuestion(){
-
+        if(mQuestionNumber<mQuestionLibrary.getLength()) {
             mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
             mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
             mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
@@ -105,7 +105,8 @@ public class QuizActivity extends AppCompatActivity {
 
             mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
             mQuestionNumber++;
-        if(mQuestionNumber==4){
+        }
+        else{
             Intent intent = new Intent(QuizActivity.this, HighScoreActivity.class);
             intent.putExtra("score", mScore);
             startActivity(intent);
